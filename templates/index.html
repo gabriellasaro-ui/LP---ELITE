@@ -32,7 +32,8 @@
     .section-title { max-width:680px; margin:0; font-family:'Space Grotesk',Arial,sans-serif; font-size:clamp(32px,4vw,58px); line-height:.98; letter-spacing:-.055em; }
     .section-title em { color:var(--red); font-style:normal; }
     .section-lead { max-width:680px; margin:20px 0 0; color:var(--muted); font-size:18px; line-height:1.65; }
-    .btn { display:inline-flex; align-items:center; justify-content:center; min-height:56px; padding:0 27px; border:1px solid transparent; border-radius:99px; background:var(--red); color:#fff; font-size:15px; font-weight:700; text-decoration:none; box-shadow:0 12px 30px rgba(236,9,32,.25); transition:transform .2s ease, box-shadow .2s ease, background .2s ease; }
+    .btn { display:inline-flex; align-items:center; justify-content:center; gap:8px; min-height:56px; padding:0 27px; border:1px solid transparent; border-radius:99px; background:var(--red); color:#fff; font-size:15px; font-weight:700; text-decoration:none; box-shadow:0 12px 30px rgba(236,9,32,.25); transition:transform .2s ease, box-shadow .2s ease, background .2s ease; }
+    .btn svg, .nav-link svg { flex:none; }
     .btn:hover { background:#c9071c; box-shadow:0 16px 35px rgba(236,9,32,.32); transform:translateY(-2px); }
     .btn--light { background:#fff; color:var(--red); box-shadow:0 14px 30px rgba(0,0,0,.16); }
     .btn--light:hover { background:#fff4f5; }
@@ -42,8 +43,7 @@
     .hero-nav { position:relative; z-index:2; display:flex; justify-content:space-between; align-items:center; padding:28px 0; }
     .brand { font-family:'Space Grotesk',Arial,sans-serif; font-size:22px; font-weight:700; letter-spacing:-.06em; }
     .brand span { color:#ffbbc2; }
-    .nav-link { color:#fff; font-size:13px; font-weight:700; text-decoration:none; }
-    .nav-link::after { content:' ↗'; color:#ffbbc2; font-size:17px; }
+    .nav-link { display:inline-flex; align-items:center; gap:7px; color:#fff; font-size:13px; font-weight:700; text-decoration:none; }
     .hero-content { position:relative; z-index:1; display:flex; min-height:625px; align-items:center; padding:28px 0 90px; }
     .hero-copy { width:min(560px,55%); }
     .hero-kicker { display:inline-flex; align-items:center; gap:8px; margin-bottom:22px; padding:8px 12px; border:1px solid rgba(255,255,255,.27); border-radius:99px; background:rgba(86,0,12,.28); color:#ffdfe3; font-size:11px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; }
@@ -255,11 +255,12 @@
       .hero { width:100%; height:auto; min-height:0; aspect-ratio:9/16; background:var(--red-deep); }
       .hero::after { background:transparent; }
       .hero-art { object-fit:cover; object-position:center; }
-      .hero-content { height:100%; min-height:0; align-items:flex-start; padding:125px 0 40px; }
-      .hero-copy { width:100%; }
+      .hero-content { height:100%; min-height:0; align-items:flex-end; padding:0 0 34px; }
+      .hero-copy { display:flex; width:100%; max-width:330px; margin:0 auto; flex-direction:column; align-items:center; text-align:center; }
       .hero .wrap { width:calc(100% - 32px); }
-      h1 { max-width:365px; font-size:48px; }
-      .hero-copy p { max-width:340px; }
+      h1 { max-width:290px; font-size:29px; line-height:1.04; letter-spacing:-.035em; }
+      .hero-copy p { max-width:285px; margin:15px auto 19px; font-size:13px; line-height:1.45; }
+      .hero-note { justify-content:center; margin-top:13px; font-size:11px; text-align:center; }
       .results-grid { grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; }
       .result-card:last-child { grid-column:auto; }
       .mentor { padding:90px 0; }
@@ -284,13 +285,13 @@
     <div class="wrap">
       <nav class="hero-nav" aria-label="Navegação principal">
         <a class="brand" href="#top">gestão<span>iFood</span></a>
-        <a class="nav-link" href="#compra">Garantir minha vaga</a>
+        <a class="nav-link" href="#compra">Garantir minha vaga <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
       </nav>
       <div class="hero-content">
         <div class="hero-copy">
           <h1>Turbine suas vendas no <span>iFood</span> com uma mentoria ao vivo de 2 horas!</h1>
           <p>Participe de uma sessão 100% prática, ao vivo e personalizada de 2 horas com um especialista para ajustar todos os detalhes da sua loja e saia com um plano pronto para lucrar mais.</p>
-          <a class="btn btn--animated btn--light" href="#compra" data-cta="hero" onclick="trackCTA('hero')">Turbinar minhas vendas <span aria-hidden="true">&nbsp;↗</span></a>
+          <a class="btn btn--animated btn--light" href="#compra" data-cta="hero" onclick="trackCTA('hero')">Turbinar minhas vendas <svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
           <div class="hero-note"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 1.5 13 3v3.75c0 3.2-2.1 6.1-5 7.75-2.9-1.65-5-4.55-5-7.75V3l5-1.5Z" stroke="currentColor" stroke-width="1.2"/><path d="m5.4 8 1.65 1.65L10.8 5.9" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg> Análise ao vivo e personalizada para a sua loja</div>
         </div>
       </div>
@@ -318,7 +319,7 @@
               <article class="audience-item"><strong>03</strong><p>Empreendedores que buscam <b>entender o algoritmo</b> do iFood.</p></article>
               <article class="audience-item"><strong>04</strong><p>Quem está começando e quer <b>evitar erros</b> para crescer rápido.</p></article>
             </div>
-            <a class="btn btn--animated" href="#compra" data-cta="audience" onclick="trackCTA('audience')">Quero faturar mais <span aria-hidden="true">&nbsp;↗</span></a>
+            <a class="btn btn--animated" href="#compra" data-cta="audience" onclick="trackCTA('audience')">Quero faturar mais <svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
           </div>
         </div>
       </div>
@@ -332,7 +333,7 @@
           <div class="help-copy">
             <p class="section-lead">Aprenda a precificar seus produtos da forma certa, equilibrando preços atrativos com margens saudáveis. Além disso, descubra como otimizar seu cardápio com fotos irresistíveis, descrições estratégicas e um layout que impulsiona as vendas com menos cliques.</p>
             <p class="section-lead">Melhore suas entregas, aumente a satisfação dos clientes e tire todas as suas dúvidas sobre delivery, promoções, reviews e muito mais. Chegou a hora de transformar sua loja em uma referência no iFood!</p>
-            <a class="btn btn--animated btn--light" href="#compra" data-cta="help" onclick="trackCTA('help')">Turbinar minhas vendas <span aria-hidden="true">&nbsp;↗</span></a>
+            <a class="btn btn--animated btn--light" href="#compra" data-cta="help" onclick="trackCTA('help')">Turbinar minhas vendas <svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
           </div>
         </div>
       </div>
@@ -347,7 +348,7 @@
           <figure class="result-card"><img src="{{ url_for('static', filename='img/resultado-03.webp') }}" alt="Resultado de vendas de aluno no iFood" loading="lazy"></figure>
           <figure class="result-card"><img src="{{ url_for('static', filename='img/resultado-02.webp') }}" alt="Resultado de vendas de aluno no iFood" loading="lazy"></figure>
         </div>
-        <a class="btn btn--animated" href="#compra" data-cta="results" onclick="trackCTA('results')" style="margin-top:42px">Quero faturar mais <span aria-hidden="true">&nbsp;↗</span></a>
+        <a class="btn btn--animated" href="#compra" data-cta="results" onclick="trackCTA('results')" style="margin-top:42px">Quero faturar mais <svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
       </div>
     </section>
 
@@ -368,7 +369,7 @@
     <section class="mentor" id="mentor">
       <div class="wrap mentor-grid">
         <div class="mentor-photo"><img src="{{ url_for('static', filename='img/foto-eric.webp') }}" alt="Eric Rodrigues em um evento do iFood" loading="lazy"></div>
-        <div class="mentor-copy"><p class="eyebrow">COM QUEM VOCÊ APRENDERÁ?</p><h2 class="section-title">Eric Rodrigues</h2><p>Um empreendedor que transformou R$20mil mensais em um império de R$1milhão mensais, e hoje revela as estratégias reais que usou para vencer.</p><p>Começou como franqueado de uma Subway, brigando para pagar as contas. Hoje, com 3 franquias e 2 restaurantes próprios, Eric fatura R$500mil por mês só no iFood e mais de R$1milhão por mês em toda sua operação.</p><p>O segredo? Ele descobriu como fazer o iFood a priorizar suas lojas, reduziu custos, criou estratégias de conversão comprovadas, com cardápios que vendem sozinhos e promoções que geram +70% de pedidos.</p><a class="btn btn--animated btn--light" href="#compra" data-cta="mentor" onclick="trackCTA('mentor')">Quero aumentar minhas vendas <span aria-hidden="true">&nbsp;↗</span></a></div>
+        <div class="mentor-copy"><p class="eyebrow">COM QUEM VOCÊ APRENDERÁ?</p><h2 class="section-title">Eric Rodrigues</h2><p>Um empreendedor que transformou R$20mil mensais em um império de R$1milhão mensais, e hoje revela as estratégias reais que usou para vencer.</p><p>Começou como franqueado de uma Subway, brigando para pagar as contas. Hoje, com 3 franquias e 2 restaurantes próprios, Eric fatura R$500mil por mês só no iFood e mais de R$1milhão por mês em toda sua operação.</p><p>O segredo? Ele descobriu como fazer o iFood a priorizar suas lojas, reduziu custos, criou estratégias de conversão comprovadas, com cardápios que vendem sozinhos e promoções que geram +70% de pedidos.</p><a class="btn btn--animated btn--light" href="#compra" data-cta="mentor" onclick="trackCTA('mentor')">Quero aumentar minhas vendas <svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
       </div>
     </section>
 
@@ -386,7 +387,7 @@
               <li><svg width="17" height="17" viewBox="0 0 17 17" fill="none" aria-hidden="true"><circle cx="8.5" cy="8.5" r="7.5" fill="currentColor"/><path d="m5.2 8.5 2.1 2.1 4.5-4.5" stroke="#fff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg> 7 dias de garantia incondicional.</li>
             </ul>
           </div>
-          <div class="offer-price"><small>Invista na sua operação</small><div class="installment"><span class="price-prefix">12x de</span><div class="price-value"><span class="currency">R$</span><strong class="amount">57,78</strong></div></div><p class="cash">OU R$ 497,00 À VISTA</p><a class="btn btn--animated btn--light" href="https://pay.cakto.com.br/9BzbqEN" target="_blank" rel="noopener" data-cta="purchase" onclick="trackCTA('purchase')">Clique aqui para adquirir <span aria-hidden="true">&nbsp;↗</span></a><div class="offer-security"><svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 1.5 13 3v3.75c0 3.2-2.1 6.1-5 7.75-2.9-1.65-5-4.55-5-7.75V3l5-1.5Z" stroke="currentColor" stroke-width="1.1"/></svg> Pagamento seguro • acesso ao agendamento após a compra</div></div>
+          <div class="offer-price"><small>Invista na sua operação</small><div class="installment"><span class="price-prefix">12x de</span><div class="price-value"><span class="currency">R$</span><strong class="amount">69,64</strong></div></div><p class="cash">OU R$ 599,00 À VISTA</p><a class="btn btn--animated btn--light" href="https://pay.cakto.com.br/9BzbqEN" target="_blank" rel="noopener" data-cta="purchase" onclick="trackCTA('purchase')">Clique aqui para adquirir <svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a><div class="offer-security"><svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 1.5 13 3v3.75c0 3.2-2.1 6.1-5 7.75-2.9-1.65-5-4.55-5-7.75V3l5-1.5Z" stroke="currentColor" stroke-width="1.1"/></svg> Pagamento seguro • acesso ao agendamento após a compra</div></div>
         </div>
       </div>
     </section>
